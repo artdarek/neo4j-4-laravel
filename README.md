@@ -1,35 +1,37 @@
-# Pusherer - Laravel 4 Service Provider
-Pusherer is a simple Pusher.com service provider for Laravel 4. 
+# Neo4j for Laravel 4 Service Provider
+
+Neo4j-4-laravel is a simple Neo4j service provider for Laravel 4. 
 
 ---
 
-[Pusher](http://pusher.com/) ([Documentation](http://pusher.com/docs)) is a simple hosted API 
-for adding realtime bi-directional functionality via WebSockets to web and mobile apps, or 
-any other Internet connected device.
-
----
+- [Installation](#installation)
+- [Registering the Package](#registering-the-package)
+- [Configuration](#Configuration)
+- [Usage](#usage)
 
 ## Installation
 
-Add Pusherer to your composer.json file:
+Add neo4j-4-laravel to your composer.json file:
 
 ```
 "require": {
-	"artdarek/pusherer": "dev-master"
+	"artdarek/neo4j-4-laravel": "dev-master"
 }
 ```
 
 Use [composer](http://getcomposer.org) to install this package.
 
-    composer update
+```
+$ composer update
+```
 
 ### Registering the Package
 
-Add the Pusherer Service Provider to your config in ``app/config/app.php``:
+Add the Neo4j-4-laravel Service Provider to your config in ``app/config/app.php``:
 
 ```php
 'providers' => array(
-	'Artdarek\Pusherer\PushererServiceProvider'
+	'Artdarek\Neo4j\Neo4jServiceProvider'
 ),
 ```
 
@@ -38,50 +40,50 @@ Add the Pusherer Service Provider to your config in ``app/config/app.php``:
 Run on the command line from the root of your project:
 
 ```
-php artisan config:publish artdarek/pusherer
+$ php artisan config:publish artdarek/neo4j-4-laravel
 ```
 
-Set your pusher.com credentials in ``app/config/packages/artdarek/pusherer/config.php``
+Set your neo4j-4-laravel credentials in ``app/config/packages/artdarek/neo4j-4-laravel/config.php``
 
-```
+```php
 return array( 
 
-	/**
-	 * App id
-	 */
-	'app_id' => '', 
+	/*
+	|--------------------------------------------------------------------------
+	| Neo4j Config
+	|--------------------------------------------------------------------------
+	*/
 
 	/**
-	 * App key
+	 * Host
 	 */
-	'key' => '',
+	'scheme' => 'http', 
+	'host' => 	'localhost',
 
 	/**
-	 * App Secret
+	 * Credentials
 	 */
-	'secret' => ''	
+	'username' => null,
+	'password' => null 
 
 );
 ```
 
-If you have not a Pusher account, just [sign up](https://app.pusherapp.com/accounts/sign_up) to get 
-your API key, App Id and Secret.
-
-
 ### Usage
 
-```
-	/**
-	 * Add notification
-	 *
-	 * @return Void
-	 */
-	public function index() {
-	
-		// Send notification to Pusher
-		$message = "This is just an example message!";
-		Pusherer::trigger('my-channel', 'my-event', array( 'message' => $message ));
-		
-	}
+```php
+/**
+ * Add node
+ *
+ * @return Void
+ */
+public function index() {
 
+    // create mew neo4j node
+    $node = Neo4j::makeNode();
+    $node->setProperty( 'type', 'some type' )
+         ->setProperty( 'id', 12345 )
+         ->save();
+
+}
 ```
