@@ -38,7 +38,7 @@ class Neo4jServiceProvider extends ServiceProvider {
 		    	// connection credentials loaded from config
 
 		    		// if neo4j key exists in database.php config use this one
-		    		if ( Config::get('database.neo4j') == null ) {
+		    		if ( Config::get('database.neo4j') != null ) {
 		                $host = Config::get('database.neo4j.default.host');
 		                $port = Config::get('database.neo4j.default.port');
 		            	$username = Config::get('database.neo4j.default.username');
