@@ -10,6 +10,7 @@ of the Neo4j REST API via PHP. The goal of Neo4j-4-laravel is to ensure you Neo4
 - [Registering the Package](#registering-the-package)
 - [Configuration](#Configuration)
 - [Usage](#usage)
+- [More usage examples](#more-usage-examples)
 
 ## Installation
 
@@ -71,13 +72,13 @@ return array(
 );
 ```
 
-### Usage
+## Usage
 
 Nodes are the first of the two major entity types in a graph database. 
 A node is a collection of zero or more key-value pairs. 
 Neo4jPHP makes it very easy to create and work with nodes.
 
-## Creating new node
+### Creating new node
 
 The following code snippet creates some nodes, sets some properties on each, and saves the nodes to the server. 
 
@@ -98,7 +99,7 @@ public function index() {
 }
 ```
 
-## Creating new node
+### Creating new node
 
 Now that the node has been created, the node's id can be used to retrieve the node from the server later. The following code retrieves the node and prints its properties:
 
@@ -119,7 +120,7 @@ Now that the node has been created, the node's id can be used to retrieve the no
 
 ```
 
-## Retrieve a Node by ID and Update
+### Retrieve a Node by ID and Update
 
 Now that the node has been created, the node's id can be used to retrieve the node from the server later.
 The following code retrieves the node and prints its properties:
@@ -151,7 +152,7 @@ The following code retrieves the node and prints its properties:
 
 ```
 
-## Delete a Node
+### Delete a Node
 
 A node can be deleted as long as its ID has been set. 
 Also note that a node cannot be deleted if it is the start or end point of any relationship.
@@ -163,6 +164,6 @@ Also note that a node cannot be deleted if it is the start or end point of any r
 
 ```
 
-## More usage examples
+### More usage examples
 
 Go to [Neo4jPHP Wiki](https://github.com/jadell/neo4jphp/wiki) to find more usage examples.
