@@ -44,6 +44,8 @@ There are two ways to configure neo4j-4-laravel. You can choose the most conveni
 
 ## Option 1: Configure neo4j using ``app/config/database.php`` file 
 
+Simply add this code at the end of your ``app/config/database.php`` file:
+
 ```php
 	/*
 	|--------------------------------------------------------------------------
