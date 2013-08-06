@@ -7,17 +7,24 @@ return array(
 	| Neo4j Config
 	|--------------------------------------------------------------------------
 	*/
+	'default' => array(
 
-	/**
-	 * Host
-	 */
-	'host' => 'localhost',
-	'port' => 7474, 
+		/**
+		 * Host
+		 */
+		'host' => 'localhost',
 
-	/**
-	 * Credentials
-	 */
-	'username' => null,
-	'password' => null 
+		/**
+		 * Port
+		 */	
+		'port' => 7474, 
+
+		/**
+		 * Credentials
+		 */
+		'username' => null,
+		'password' => null 
+
+	);
 
 );
