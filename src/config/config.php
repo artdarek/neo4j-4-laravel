@@ -25,6 +25,6 @@ return array(
 		'username' => null,
 		'password' => null 
 
-	);
+	),
 
 );
