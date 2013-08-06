@@ -40,6 +40,29 @@ Add the Neo4j-4-laravel Service Provider to your config in ``app/config/app.php`
 
 ### Configuration
 
+There are two ways to configure neo4j-4-laravel. You can choose the most convenient way for you. You can put your Neo4j credentials into ``app/config/database.php`` (option 1) file or use package config file which you can be generated through command line by artisan (option 2).
+
+## Option 1: Configure neo4j using ``app/config/database.php`` file 
+
+```php
+	/*
+	|--------------------------------------------------------------------------
+	| Neo4j Databases
+	|--------------------------------------------------------------------------
+	*/
+
+	'neo4j' => [
+		'default' => [
+			'host'     => 'localhost',
+			'port'     => 7474,
+			'username' => null,
+			'password' => null,
+		],
+	],
+
+```
+## Option 2: Configure neo4j using package config file
+
 Run on the command line from the root of your project:
 
 ```
@@ -56,20 +79,25 @@ return array(
 	| Neo4j Config
 	|--------------------------------------------------------------------------
 	*/
+	'default' => array(
 
-	/**
-	 * Host
-	 */
-	'host' => 	'localhost',
-	'port' => 7474, 
+		/**
+		 * Host
+		 */
+		'host' => 'localhost',
 
-	/**
-	 * Credentials
-	 */
-	'username' => null,
-	'password' => null 
+		/**
+		 * Port
+		 */	
+		'port' => 7474, 
 
-);
+		/**
+		 * Credentials
+		 */
+		'username' => null,
+		'password' => null 
+
+	),
 ```
 
 ## Usage
