@@ -19,7 +19,6 @@
     "require-dev": {  
         "illuminate/support": "4.0.*"
     },      
-    "require-all": true,
     "autoload": {
         "classmap": [
             "src/migrations"
