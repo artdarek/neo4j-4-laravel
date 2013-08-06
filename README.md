@@ -83,40 +83,19 @@ Neo4jPHP makes it very easy to create and work with nodes.
 The following code snippet creates some nodes, sets some properties on each, and saves the nodes to the server. 
 
 ```php
-/**
- * Add node
- *
- * @return Void
- */
-public function index() {
 
-    // create mew neo4j node
-    $node = Neo4j::makeNode();
-    $node->setProperty( 'type', 'some type' )
-         ->setProperty( 'id', 12345 )
-         ->save();
+$arthur = Neo4j::makeNode();
+$arthur->setProperty('name', 'Arthur Dent')
+    ->setProperty('mood', 'nervous')
+    ->setProperty('home', 'small cottage')
+    ->save();
 
-}
-```
+$ford = Neo4j::makeNode();
+$ford->setProperty('name', 'Ford Prefect')
+    ->setProperty('occupation', 'travel writer')
+    ->save();
 
-### Creating new node
-
-Now that the node has been created, the node's id can be used to retrieve the node from the server later. The following code retrieves the node and prints its properties:
-
-```php
-
-	$arthur = Neo4j::makeNode();
-	$arthur->setProperty('name', 'Arthur Dent')
-	    ->setProperty('mood', 'nervous')
-	    ->setProperty('home', 'small cottage')
-	    ->save();
-	
-	$ford = Neo4j::makeNode();
-	$ford->setProperty('name', 'Ford Prefect')
-	    ->setProperty('occupation', 'travel writer')
-	    ->save();
-	
-	$arthurId = $arthur->getId();
+$arthurId = $arthur->getId();
 
 ```
 
@@ -127,28 +106,28 @@ The following code retrieves the node and prints its properties:
 
 ```php
 
-	$character = Neo4j::getNode($arthurId);
-	
-	foreach ($character->getProperties() as $key => $value) {
-	    echo "$key: $value\n";
-	}
-	
-	// prints:
-	// name: Arthur Dent
-	// mood: nervous
-	// home: small cottage
-	
-	$character->removeProperty('mood')
-	    ->setProperty('home', 'demolished')
-	    ->save();
-	
-	foreach ($character->getProperties() as $key => $value) {
-	    echo "$key: $value\n";
-	}
-	
-	// prints:
-	// name: Arthur Dent
-	// home: demolished
+$character = Neo4j::getNode($arthurId);
+
+foreach ($character->getProperties() as $key => $value) {
+    echo "$key: $value\n";
+}
+
+// prints:
+// name: Arthur Dent
+// mood: nervous
+// home: small cottage
+
+$character->removeProperty('mood')
+    ->setProperty('home', 'demolished')
+    ->save();
+
+foreach ($character->getProperties() as $key => $value) {
+    echo "$key: $value\n";
+}
+
+// prints:
+// name: Arthur Dent
+// home: demolished
 
 ```
 
@@ -159,8 +138,8 @@ Also note that a node cannot be deleted if it is the start or end point of any r
 
 ```php
 
-	$earth = Neo4j::getNode(123);
-	$earth->delete();
+$earth = Neo4j::getNode(123);
+$earth->delete();
 
 ```
 
