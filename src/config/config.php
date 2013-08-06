@@ -11,8 +11,8 @@ return array(
 	/**
 	 * Host
 	 */
-	'scheme' => 'http', 
-	'host' => 	'localhost',
+	'host' => 'localhost',
+	'port' => 7474, 
 
 	/**
 	 * Credentials
