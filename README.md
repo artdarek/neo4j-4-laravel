@@ -1,4 +1,4 @@
-# Neo4j for Laravel 4 Service Provider
+# Neo4j Service Provider for Laravel 4
 
 Neo4j-4-laravel is a simple Neo4j service provider for Laravel 4. It is based on [Neo4jPHP](https://github.com/jadell/neo4jphp) 
 witch is a PHP library wrapping the Neo4j graph database. The goal of Neo4jPHP is to provide you with access to all the functionality 
