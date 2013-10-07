@@ -100,6 +100,7 @@ return array(
 		'password' => null 
 
 	),
+);
 ```
 
 ## Usage
