@@ -14,18 +14,10 @@ of the Neo4j REST API via PHP. The goal of Neo4j-4-laravel is to ensure you Neo4
 
 ## Installation
 
-Add neo4j-4-laravel to your composer.json file:
-
-```
-"require": {
-	"artdarek/neo4j-4-laravel": "dev-master"
-}
-```
-
 Use [composer](http://getcomposer.org) to install this package.
 
 ```
-$ composer update
+$ composer require artdarek/neo4j-4-laravel
 ```
 
 ### Registering the Package
